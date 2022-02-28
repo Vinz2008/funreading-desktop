@@ -1,0 +1,58 @@
+{
+  "name": "funreading",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-zip",
+          "config": {
+            "name": "funreading_webview"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "description": "FunReading app"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "start": "electron-forge start",
+    "dist": "build",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "author": "Vinz2008",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "electron": "^17.1.0"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  }
+}
